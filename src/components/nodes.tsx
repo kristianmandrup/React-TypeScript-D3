@@ -1,6 +1,6 @@
-import * as React from "react";
-import * as d3 from "d3";
-import {d3Types} from "../types";
+import * as React from 'react';
+import * as d3 from 'd3';
+import {d3Types} from '../types';
 
 class Node extends React.Component < {
   node : d3Types.d3Node,
@@ -17,7 +17,7 @@ class Node extends React.Component < {
   render() {
     return (
       <circle
-        className="node"
+        className='node'
         r={5}
         fill={this.props.color}
         ref={(ref : SVGCircleElement) => this.ref = ref}>
@@ -34,8 +34,8 @@ export default class Nodes extends React.Component < {
   componentDidMount() {
     const simulation = this.props.simulation;
     d3
-      .selectAll(".node")
-      .call(d3.drag().on("start", onDragStart).on("drag", onDrag).on("end", onDragEnd));
+      .selectAll('.node')
+      .call(d3.drag().on('start', onDragStart).on('drag', onDrag).on('end', onDragEnd));
 
     function onDragStart(d : any) {
       if (!d3.event.active) {
@@ -73,7 +73,7 @@ export default class Nodes extends React.Component < {
 
   public render() {
     return (
-      <g className="nodes">
+      <g className='nodes'>
         {this.nodes}
       </g>
     );
